@@ -186,6 +186,7 @@ h2 {
 }
 
 .member-img img {
+    border-radius: 50%;
     max-width: 25%;
     height: auto;
     object-fit: contain;
