@@ -224,3 +224,173 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
+
+
+/* Code by Tanjil Rahman  */
+
+
+
+/*Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575.98px){
+    .menu-logo {
+        font-family: 'Abril Fatface', cursive;
+        font-size: 1rem;
+    }
+    
+    section{
+        padding: 40px 15px;
+    }
+    
+    header{
+        margin-left: 0;
+    }
+    h1 {
+        padding-top: 0;
+        font-size: 2rem;
+    }
+
+    h2{
+        text-align: center;
+        font-size: 1.5rem;
+        margin-bottom: 25px;
+    }
+
+    .header-content {
+        margin-right: 0;
+        max-width: 100%;
+    }
+    .curved-image{
+        width: 280px;
+        height: 280px;
+        text-align: center;
+        margin-top: 50px;
+        position: initial;
+    }
+
+    #services ul {
+        text-align: center;
+    }
+    #services li {
+        flex: 0 0 calc(88% - 1rem);
+    }
+
+    #differentiators{
+        padding: 40px 15px;
+    }
+    .carousel {
+        height: 350px;
+    }
+    .carousel-item{
+        padding: 2rem;
+        font-size: 1.5rem;
+    }
+    .grid-container {
+        display: block;
+    }
+    .member-img{
+        display: block;
+        margin-bottom: 10px;
+    }
+    .my-paragraph {
+        width: 100%;
+    }
+    .container {
+        display: block;
+    }
+    .my-image{
+        margin: 0;
+        width: 60%;
+    }
+    footer a{
+        font-size: 13px;
+    }
+}
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) and (max-width: 767.98px) {
+    header{
+        margin-left: 0;
+    }
+    h1 {
+        padding-top: 0;
+        font-size: 3rem;
+    }
+    .header-content {
+        margin-right: 0;
+        max-width: 100%;
+    }
+    .curved-image{
+        text-align: center;
+        margin-top: 50px;
+        position: initial;
+    }
+    #differentiators{
+        padding: 40px 15px;
+    }
+    .carousel {
+        height: 300px;
+    }
+    .carousel-item{
+        padding: 2rem;
+        font-size: 2rem;
+    }
+    .grid-container {
+        display: block;
+    }
+    .member-img{
+        display: block;
+        margin-bottom: 10px;
+    }
+    .my-paragraph {
+        width: 100%;
+    }
+    .container {
+        align-items: center;
+    }
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991.98px) {
+    header{
+        margin-left: 0;
+    }
+    h1 {
+        padding-top: 0;
+        font-size: 3rem;
+    }
+    .header-content {
+        margin-right: 0;
+        max-width: 100%;
+    }
+    .curved-image{
+        text-align: center;
+        margin-top: 50px;
+        position: initial;
+    }
+    .carousel-item{
+        font-size: 2.5rem;
+    }
+
+    .my-paragraph {
+        width: 100%;
+    }
+}
+
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    header{
+        margin-left: 0;
+    }
+    h1 {
+        font-size: 3rem;
+    }
+    .header-content {
+        max-width: 30em;
+    }
+    .curved-image{
+        right: 2rem;
+    }
+    
+
+}
+
