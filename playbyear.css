@@ -160,6 +160,35 @@ h2 {
     transform: translateX(0%);
 }
 
+/* General styles for .clients section */
+
+.clients-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 logos in a row */
+    gap: 4rem 4rem; /* Gap between the logos was 10px before */
+    margin-top: 50px; /* Adjust to add more space between the H2 and the logos */
+}
+
+.clients-grid img {
+    width: 100%; /* Makes sure each logo fills its container */
+    max-width: 150px; /* Adjust as per your logo's actual size */
+    margin: 0 auto; /* Centers the logo in the grid cell */
+}
+
+/* Mobile Optimization using media queries */
+
+@media (max-width: 768px) { /* For tablets and below */
+    .clients-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 logos per row on tablets and below */
+    }
+}
+
+@media (max-width: 480px) { /* For mobile phones and very small screens */
+    .clients-grid {
+        grid-template-columns: repeat(1, 1fr); /* 1 logo per row on very small screens */
+    }
+}
+
 .grid-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -224,11 +253,6 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
-
-
-/* Code by Tanjil Rahman  */
-
-
 
 /*Extra small devices (portrait phones, less than 576px)*/
 @media (max-width: 575.98px){
@@ -393,4 +417,3 @@ footer a:hover {
     
 
 }
-
