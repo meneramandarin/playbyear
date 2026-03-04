@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="Assets/ear.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Satoshi:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="playbyear.css">
+
+    <title>Book a Session | Play By Ear</title>
+    <meta name="description" content="Book a 1-on-1 consulting session with Marlene Ronstedt — GTM strategy for AI and Web3 startups.">
+</head>
+<body>
+    <div class="grain-overlay"></div>
+
+    <nav class="menu-bar">
+        <a href="index.html" class="menu-logo">Play By Ear</a>
+        <div class="menu-links">
+            <a href="https://ronstedt.space/category/writing/" target="_blank">Writing</a>
+            <a href="shop.html" class="nav-active">Shop</a>
+            <a href="index.html#cta" class="nav-cta">Let's Talk</a>
+        </div>
+    </nav>
+
+    <main class="booking-page">
+
+        <div class="booking-back">
+            <a href="shop.html" class="back-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+                Back to Shop
+            </a>
+        </div>
+
+        <div class="booking-header fade-in">
+            <p class="section-eyebrow">1:1 Session · $100 / hr</p>
+            <h1>Tell Me About<br><em>Your Challenge.</em></h1>
+            <p class="booking-description">Fill in the details below and you'll be redirected to a secure payment page. Once payment is confirmed, I'll reach out to schedule your session.</p>
+        </div>
+
+    
+        <form
+            id="consult-form"
+            class="consult-form fade-in-delay"
+            action="https://formspree.io/f/xlgwqbbr"
+            method="POST"
+        >
+            <input type="hidden" name="_subject" value="New Consulting Session Request — Play By Ear">
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="name">Your Name <span class="required">*</span></label>
+                    <input type="text" id="name" name="name" required placeholder="Jane Smith" autocomplete="name">
+                </div>
+                <div class="form-group">
+                    <label for="business">Business / Company</label>
+                    <input type="text" id="business" name="business" placeholder="Acme Inc.">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="website">Website</label>
+                <input type="text" id="website" name="website" placeholder="https://yoursite.com">
+            </div>
+
+            <div class="form-group">
+                <label for="painpoint">What's your biggest marketing challenge? <span class="required">*</span></label>
+                <textarea id="painpoint" name="painpoint" required rows="5" placeholder="Tell me what you're working on, where you're stuck, and what you're hoping to figure out in this session..."></textarea>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="email">Email <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" required placeholder="jane@company.com" autocomplete="email">
+                </div>
+                <div class="form-group">
+                    <label for="timezone">Timezone</label>
+                    <input type="text" id="timezone" name="timezone" placeholder="e.g. CET, EST, PST">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="+1 234 567 8900" autocomplete="tel">
+            </div>
+
+            <div class="form-submit">
+                <p class="form-note">You'll be redirected to a secure Stripe checkout after submitting.</p>
+                <button type="submit" id="submit-btn" class="btn btn-primary">
+                    <span id="submit-label">Continue to Payment</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </button>
+            </div>
+
+            <p id="form-error" class="form-error" style="display:none;">Something went wrong — please try again or email <a href="mailto:marlene@playbyear.com">marlene@playbyear.com</a>.</p>
+
+        </form>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <span class="footer-logo">Play By Ear</span>
+            <nav class="footer-links">
+                <a href="https://www.linkedin.com/company/playbyear/" target="_blank">LinkedIn</a>
+                <a href="privacy-policy.html">Privacy</a>
+            </nav>
+        </div>
+        <p class="footer-copyright">&copy; 2026 Play By Ear. All rights reserved.</p>
+    </footer>
+
+    <script src="carousel.js"></script>
+    <script>
+        const form = document.getElementById('consult-form');
+        const btn = document.getElementById('submit-btn');
+        const label = document.getElementById('submit-label');
+        const errorMsg = document.getElementById('form-error');
+
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            btn.disabled = true;
+            label.textContent = 'Sending…';
+            errorMsg.style.display = 'none';
+
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    window.location.href = 'https://buy.stripe.com/eVqfZha8q6e5buy1Xlf3a02';
+                } else {
+                    throw new Error('Formspree error');
+                }
+            } catch (err) {
+                btn.disabled = false;
+                label.textContent = 'Continue to Payment';
+                errorMsg.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
