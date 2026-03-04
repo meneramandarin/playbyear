@@ -1241,6 +1241,144 @@ button:disabled {
     transform: none !important;
 }
 
+/* ========================================
+   Projects Page
+   ======================================== */
+
+.projects-hero {
+    padding: 160px var(--space-lg) var(--space-lg);
+    background: var(--color-bg);
+}
+
+.projects-list {
+    background: var(--color-bg);
+    padding-bottom: var(--space-2xl);
+}
+
+.project-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--space-xl) var(--space-lg);
+}
+
+.project-item + .project-item {
+    border-top: 1px solid var(--color-border);
+}
+
+.project-item--reversed .project-image-wrap {
+    order: 2;
+}
+
+/* Image placeholder */
+.project-img-placeholder {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background: var(--color-bg-alt);
+    border-radius: 20px;
+    border: 1.5px dashed rgba(26, 26, 26, 0.12);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    color: var(--color-text-muted);
+    transition: border-color var(--transition-fast);
+}
+
+/* Swap the placeholder out for a real image — same class wrapper works for both */
+.project-image-wrap img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 20px;
+    display: block;
+}
+
+.project-img-placeholder span {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 0.9rem;
+    opacity: 0.6;
+}
+
+/* Project content */
+.project-type {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--color-accent);
+    margin-bottom: 0.75rem;
+}
+
+.project-content h3 {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    line-height: 1.1;
+    margin-bottom: var(--space-md);
+}
+
+.project-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: var(--space-md);
+}
+
+.stat-chip {
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-accent);
+    background: rgba(199, 91, 57, 0.07);
+    border: 1px solid rgba(199, 91, 57, 0.15);
+    padding: 0.3rem 0.85rem;
+    border-radius: 100px;
+    white-space: nowrap;
+}
+
+.project-content p {
+    font-size: 1rem;
+    line-height: 1.8;
+    max-width: 54ch;
+}
+
+/* Projects responsive */
+@media (max-width: 1024px) {
+    .project-item {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+
+    .project-item--reversed .project-image-wrap {
+        order: 0;
+    }
+
+    .project-content p {
+        max-width: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-hero {
+        padding-top: 120px;
+    }
+
+    .project-item {
+        padding: var(--space-lg) var(--space-md);
+    }
+}
+
+/* ========================================
+   Booking page responsive
+   ======================================== */
+
 /* Booking page responsive */
 @media (max-width: 768px) {
     .booking-page {

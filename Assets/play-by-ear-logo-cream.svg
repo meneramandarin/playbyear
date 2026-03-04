@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif&amp;display=swap');
+    </style>
+  </defs>
+  <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle"
+    font-family="'Instrument Serif', Georgia, serif"
+    font-size="200"
+    fill="#FAF8F5">Play By Ear</text>
+</svg>
