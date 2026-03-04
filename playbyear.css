@@ -1399,3 +1399,61 @@ button:disabled {
         justify-content: center;
     }
 }
+
+/* ========================================
+   Size Selector (Shop — Hoodie)
+   ======================================== */
+
+.size-selector {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-sm);
+}
+
+.size-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+    flex-shrink: 0;
+}
+
+.size-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.size-btn {
+    padding: 0.35rem 0.75rem;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 600;
+    background: transparent;
+    border: 1.5px solid var(--color-border);
+    border-radius: 6px;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.size-btn:hover {
+    border-color: var(--color-dark);
+    color: var(--color-dark);
+}
+
+.size-btn.active {
+    background: var(--color-dark);
+    border-color: var(--color-dark);
+    color: var(--color-cream);
+}
+
+/* Real product images in merch cards */
+.product-image--merch img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+}

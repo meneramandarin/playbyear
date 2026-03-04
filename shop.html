@@ -68,20 +68,29 @@
             </article>
 
             <!-- Hoodie -->
-            <!-- Replace the href below with your Stripe Payment Link for the hoodie -->
             <article class="product-card fade-up">
                 <div class="product-image product-image--merch">
-                    <span class="merch-icon">◯</span>
-                    <span class="merch-name">Hoodie</span>
+                    <img src="https://files.cdn.printful.com/files/e4e/e4e069dcee8e2efd939971d0aa8dc583_preview.png" alt="Play By Ear Hoodie — Gildan Heavy Blend, black with cream logo">
                 </div>
                 <div class="product-info">
                     <span class="product-type">Merch</span>
                     <h3>Play By Ear Hoodie</h3>
-                    <p class="product-description">Premium heavyweight hoodie with minimal Play By Ear branding. The kind you'll actually wear.</p>
+                    <p class="product-description">Gildan 18500 Heavy Blend hoodie with embroidered Play By Ear logo at the chest. The kind you'll actually wear.</p>
+                    <div class="size-selector">
+                        <span class="size-label">Size</span>
+                        <div class="size-options">
+                            <button class="size-btn active" data-size="S">S</button>
+                            <button class="size-btn" data-size="M">M</button>
+                            <button class="size-btn" data-size="L">L</button>
+                            <button class="size-btn" data-size="XL">XL</button>
+                            <button class="size-btn" data-size="2XL">2XL</button>
+                            <button class="size-btn" data-size="3XL">3XL</button>
+                        </div>
+                    </div>
                     <div class="product-footer">
-                        <!-- Replace with actual price once set up in Printful/Stripe -->
-                        <span class="product-price product-price--pending">—</span>
-                        <a href="#" class="btn btn-primary" target="_blank">
+                        <span class="product-price">$35.00</span>
+                        <!-- Replace HOODIE_STRIPE_LINK with your Stripe Payment Link for the hoodie -->
+                        <a href="HOODIE_STRIPE_LINK" class="btn btn-primary" target="_blank">
                             <span>Buy Now</span>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -92,20 +101,18 @@
             </article>
 
             <!-- Cap -->
-            <!-- Replace the href below with your Stripe Payment Link for the cap -->
             <article class="product-card fade-up">
                 <div class="product-image product-image--merch">
-                    <span class="merch-icon">◯</span>
-                    <span class="merch-name">Cap</span>
+                    <img src="https://files.cdn.printful.com/files/8e4/8e4c52ecbf17476d9e624944de5bb356_preview.png" alt="Play By Ear Corduroy Cap — black with 3D puff embroidered logo">
                 </div>
                 <div class="product-info">
                     <span class="product-type">Merch</span>
                     <h3>Play By Ear Cap</h3>
-                    <p class="product-description">Classic six-panel cap with embroidered Play By Ear branding. Clean, minimal, built to last.</p>
+                    <p class="product-description">Vintage corduroy cap (Big Accessories BA703) with 3D puff embroidered Play By Ear logo. Clean, minimal, one size.</p>
                     <div class="product-footer">
-                        <!-- Replace with actual price once set up in Printful/Stripe -->
-                        <span class="product-price product-price--pending">—</span>
-                        <a href="#" class="btn btn-primary" target="_blank">
+                        <span class="product-price">$20.00</span>
+                        <!-- Replace CAP_STRIPE_LINK with your Stripe Payment Link for the cap -->
+                        <a href="CAP_STRIPE_LINK" class="btn btn-primary" target="_blank">
                             <span>Buy Now</span>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -130,5 +137,13 @@
     </footer>
 
     <script src="carousel.js"></script>
+    <script>
+        document.querySelectorAll('.size-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
 </body>
 </html>
