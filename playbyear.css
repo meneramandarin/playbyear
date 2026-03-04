@@ -1457,3 +1457,131 @@ button:disabled {
     object-fit: cover;
     border-radius: inherit;
 }
+
+/* ========================================
+   Checkout Overlay
+   ======================================== */
+
+.checkout-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(26, 26, 26, 0.55);
+    backdrop-filter: blur(4px);
+    z-index: 1000;
+    display: flex;
+    justify-content: flex-end;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition-smooth);
+}
+
+.checkout-overlay.open {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.checkout-panel {
+    background: var(--color-bg);
+    width: 100%;
+    max-width: 480px;
+    height: 100%;
+    overflow-y: auto;
+    padding: var(--space-lg);
+    transform: translateX(100%);
+    transition: transform var(--transition-smooth);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.checkout-overlay.open .checkout-panel {
+    transform: translateX(0);
+}
+
+.checkout-panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.checkout-panel-product {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-accent);
+}
+
+.checkout-panel-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-text-muted);
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    transition: color var(--transition-fast);
+}
+
+.checkout-panel-close:hover {
+    color: var(--color-dark);
+}
+
+.checkout-panel-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    line-height: 1.15;
+    margin: 0;
+}
+
+.checkout-panel-title em {
+    font-style: italic;
+    color: var(--color-accent);
+}
+
+.checkout-panel .consult-form,
+.checkout-panel form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+@media (max-width: 520px) {
+    .checkout-panel {
+        max-width: 100%;
+        padding: var(--space-md);
+    }
+}
+
+/* ========================================
+   Success Page
+   ======================================== */
+
+.success-page {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 140px var(--space-lg) var(--space-2xl);
+}
+
+.success-content {
+    text-align: center;
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.success-icon {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.success-description {
+    font-size: 1.05rem;
+    color: var(--color-text-muted);
+    max-width: 40ch;
+}

@@ -89,13 +89,12 @@
                     </div>
                     <div class="product-footer">
                         <span class="product-price">$35.00</span>
-                        <!-- Replace HOODIE_STRIPE_LINK with your Stripe Payment Link for the hoodie -->
-                        <a href="HOODIE_STRIPE_LINK" class="btn btn-primary" target="_blank">
+                        <button class="btn btn-primary" onclick="openCheckout('hoodie')">
                             <span>Buy Now</span>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M5 12h14M12 5l7 7-7 7"/>
                             </svg>
-                        </a>
+                        </button>
                     </div>
                 </div>
             </article>
@@ -111,19 +110,79 @@
                     <p class="product-description">Vintage corduroy cap (Big Accessories BA703) with 3D puff embroidered Play By Ear logo. Clean, minimal, one size.</p>
                     <div class="product-footer">
                         <span class="product-price">$20.00</span>
-                        <!-- Replace CAP_STRIPE_LINK with your Stripe Payment Link for the cap -->
-                        <a href="CAP_STRIPE_LINK" class="btn btn-primary" target="_blank">
+                        <button class="btn btn-primary" onclick="openCheckout('cap')">
                             <span>Buy Now</span>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M5 12h14M12 5l7 7-7 7"/>
                             </svg>
-                        </a>
+                        </button>
                     </div>
                 </div>
             </article>
 
         </div>
     </section>
+
+    <!-- Checkout Overlay -->
+    <div id="checkout-overlay" class="checkout-overlay" aria-hidden="true">
+        <div class="checkout-panel">
+            <div class="checkout-panel-header">
+                <p class="checkout-panel-product" id="checkout-panel-product"></p>
+                <button class="checkout-panel-close" id="checkout-close" aria-label="Close">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 6L6 18M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            <h2 class="checkout-panel-title">Ship to<br><em>Where?</em></h2>
+            <form id="checkout-addr-form" novalidate>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="co-name">Full Name <span class="required">*</span></label>
+                        <input type="text" id="co-name" required placeholder="Jane Smith" autocomplete="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="co-email">Email <span class="required">*</span></label>
+                        <input type="email" id="co-email" required placeholder="jane@email.com" autocomplete="email">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="co-address">Street Address <span class="required">*</span></label>
+                    <input type="text" id="co-address" required placeholder="123 Main Street" autocomplete="street-address">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="co-city">City <span class="required">*</span></label>
+                        <input type="text" id="co-city" required placeholder="New York" autocomplete="address-level2">
+                    </div>
+                    <div class="form-group">
+                        <label for="co-state">State / Province</label>
+                        <input type="text" id="co-state" placeholder="NY" autocomplete="address-level1">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="co-zip">ZIP / Postal Code <span class="required">*</span></label>
+                        <input type="text" id="co-zip" required placeholder="10001" autocomplete="postal-code">
+                    </div>
+                    <div class="form-group">
+                        <label for="co-country">Country Code <span class="required">*</span></label>
+                        <input type="text" id="co-country" required placeholder="US" maxlength="2" autocomplete="country" style="text-transform:uppercase">
+                    </div>
+                </div>
+                <div class="form-submit">
+                    <p class="form-note">You'll choose a shipping option and pay securely on Stripe.</p>
+                    <button type="submit" id="checkout-submit-btn" class="btn btn-primary">
+                        <span id="checkout-submit-label">Continue to Payment</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                </div>
+                <p id="checkout-error" class="form-error" style="display:none;">Something went wrong — please try again or email <a href="mailto:hello@playbyear.com">hello@playbyear.com</a>.</p>
+            </form>
+        </div>
+    </div>
 
     <footer class="footer">
         <div class="footer-content">
@@ -138,11 +197,84 @@
 
     <script src="carousel.js"></script>
     <script>
+        // Size selector
         document.querySelectorAll('.size-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
+            btn.addEventListener('click', function () {
                 document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
                 this.classList.add('active');
             });
+        });
+
+        // Checkout overlay
+        let currentProduct = null;
+
+        function openCheckout(product) {
+            currentProduct = product;
+            const activeSize = document.querySelector('.size-btn.active');
+            const label = product === 'hoodie'
+                ? `Play By Ear Hoodie / ${activeSize ? activeSize.dataset.size : ''}`
+                : 'Play By Ear Corduroy Cap';
+            document.getElementById('checkout-panel-product').textContent = label;
+            document.getElementById('checkout-overlay').classList.add('open');
+            document.getElementById('checkout-overlay').setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCheckout() {
+            document.getElementById('checkout-overlay').classList.remove('open');
+            document.getElementById('checkout-overlay').setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        }
+
+        document.getElementById('checkout-close').addEventListener('click', closeCheckout);
+        document.getElementById('checkout-overlay').addEventListener('click', function (e) {
+            if (e.target === this) closeCheckout();
+        });
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeCheckout(); });
+
+        // Checkout form submit
+        document.getElementById('checkout-addr-form').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const btn = document.getElementById('checkout-submit-btn');
+            const label = document.getElementById('checkout-submit-label');
+            const errorMsg = document.getElementById('checkout-error');
+
+            btn.disabled = true;
+            label.textContent = 'Calculating shipping…';
+            errorMsg.style.display = 'none';
+
+            const activeSize = document.querySelector('.size-btn.active');
+
+            try {
+                const res = await fetch('/api/create-checkout', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        product: currentProduct,
+                        size: activeSize ? activeSize.dataset.size : '',
+                        name: document.getElementById('co-name').value,
+                        email: document.getElementById('co-email').value,
+                        address1: document.getElementById('co-address').value,
+                        city: document.getElementById('co-city').value,
+                        state: document.getElementById('co-state').value,
+                        zip: document.getElementById('co-zip').value,
+                        country: document.getElementById('co-country').value.toUpperCase(),
+                    }),
+                });
+
+                const data = await res.json();
+                if (data.url) {
+                    window.location.href = data.url;
+                } else {
+                    throw new Error(data.error || 'Unknown error');
+                }
+            } catch (err) {
+                console.error(err);
+                btn.disabled = false;
+                label.textContent = 'Continue to Payment';
+                errorMsg.style.display = 'block';
+            }
         });
     </script>
 </body>
