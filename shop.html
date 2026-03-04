@@ -69,8 +69,13 @@
 
             <!-- Hoodie -->
             <article class="product-card fade-up">
-                <div class="product-image product-image--merch">
-                    <img src="https://files.cdn.printful.com/files/e4e/e4e069dcee8e2efd939971d0aa8dc583_preview.png" alt="Play By Ear Hoodie — Gildan Heavy Blend, black with cream logo">
+                <div class="product-image product-image--merch hoodie-gallery">
+                    <img class="hoodie-slide active" src="Assets/hoodie details .jpg" alt="Play By Ear Hoodie — logo detail">
+                    <img class="hoodie-slide" src="Assets/entire hoodie.jpg" alt="Play By Ear Hoodie — full view">
+                    <div class="gallery-dots">
+                        <button class="gallery-dot active" onclick="showSlide(0)" aria-label="Image 1"></button>
+                        <button class="gallery-dot" onclick="showSlide(1)" aria-label="Image 2"></button>
+                    </div>
                 </div>
                 <div class="product-info">
                     <span class="product-type">Merch</span>
@@ -88,7 +93,7 @@
                         </div>
                     </div>
                     <div class="product-footer">
-                        <span class="product-price">$35.00</span>
+                        <span class="product-price">$50.00</span>
                         <button class="btn btn-primary" onclick="openCheckout('hoodie')">
                             <span>Buy Now</span>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -197,6 +202,20 @@
 
     <script src="carousel.js"></script>
     <script>
+        // Hoodie image gallery
+        function showSlide(index) {
+            document.querySelectorAll('.hoodie-slide').forEach((s, i) => s.classList.toggle('active', i === index));
+            document.querySelectorAll('.gallery-dot').forEach((d, i) => d.classList.toggle('active', i === index));
+        }
+
+        // Click image to advance
+        document.querySelector('.hoodie-gallery').addEventListener('click', function (e) {
+            if (e.target.classList.contains('gallery-dot')) return;
+            const slides = document.querySelectorAll('.hoodie-slide');
+            const current = [...slides].findIndex(s => s.classList.contains('active'));
+            showSlide((current + 1) % slides.length);
+        });
+
         // Size selector
         document.querySelectorAll('.size-btn').forEach(btn => {
             btn.addEventListener('click', function () {

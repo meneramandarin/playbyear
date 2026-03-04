@@ -12,7 +12,7 @@ const VARIANT_IDS = {
     cap: 5220368922,
 };
 
-const PRICES = { hoodie: 3500, cap: 2000 }; // cents
+const PRICES = { hoodie: 5000, cap: 2000 }; // cents
 
 async function readBody(req) {
     return new Promise((resolve, reject) => {

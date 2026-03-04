@@ -820,8 +820,12 @@ section {
 
 /* Small Mobile */
 @media (max-width: 480px) {
-    .menu-links a:not(.nav-cta) {
+    .menu-links .nav-cta {
         display: none;
+    }
+
+    .menu-links {
+        gap: var(--space-sm);
     }
 
     .btn {
@@ -1456,6 +1460,52 @@ button:disabled {
     height: 100%;
     object-fit: cover;
     border-radius: inherit;
+}
+
+/* Hoodie image gallery */
+.hoodie-gallery {
+    position: relative;
+    cursor: pointer;
+}
+
+.hoodie-slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.hoodie-slide.active {
+    opacity: 1;
+}
+
+.gallery-dots {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 6px;
+    z-index: 2;
+}
+
+.gallery-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(250, 248, 245, 0.5);
+    cursor: pointer;
+    padding: 0;
+    transition: background var(--transition-fast);
+}
+
+.gallery-dot.active {
+    background: var(--color-cream);
 }
 
 /* ========================================
