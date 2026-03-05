@@ -221,7 +221,7 @@ p {
 .btn-primary:hover {
     background: var(--color-accent);
     transform: translateY(-2px);
-    box-shadow: 0 10px 40px rgba(199, 91, 57, 0.3);
+    box-shadow: 0 10px 40px rgba(145, 128, 230, 0.3);
 }
 
 .btn-secondary {
@@ -871,7 +871,7 @@ section {
     background: var(--color-accent);
     color: var(--color-cream);
     transform: translateY(-2px);
-    box-shadow: 0 10px 40px rgba(199, 91, 57, 0.3);
+    box-shadow: 0 10px 40px rgba(145, 128, 230, 0.3);
 }
 
 /* Shop Hero */
@@ -1251,7 +1251,39 @@ button:disabled {
 
 .projects-hero {
     padding: 160px var(--space-lg) var(--space-lg);
-    background: var(--color-bg);
+    position: relative;
+    background-image: url('Assets/texture.webp');
+    background-size: cover;
+    background-position: center;
+}
+
+.projects-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(252, 247, 238, 0.761);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.projects-hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 30%;
+    width: 50%;
+    height: 100%;
+    background-image: url('Assets/splash.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.projects-hero .section-header {
+    position: relative;
+    z-index: 3;
 }
 
 .projects-list {
