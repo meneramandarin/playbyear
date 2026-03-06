@@ -628,7 +628,36 @@ section {
 .footer {
     background: var(--color-dark);
     color: var(--color-cream);
-    padding: var(--space-lg);
+    padding: var(--space-xl) var(--space-lg) var(--space-lg);
+}
+
+.footer-newsletter-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xl);
+    max-width: 1200px;
+    margin: 0 auto var(--space-xl);
+    padding-bottom: var(--space-xl);
+}
+
+.footer-newsletter-row .newsletter-text h3 {
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    color: var(--color-cream);
+    margin-bottom: 0.4rem;
+}
+
+.footer-newsletter-row .newsletter-text p {
+    color: rgba(250, 248, 245, 0.6);
+    font-size: 0.95rem;
+}
+
+.footer-newsletter-row .newsletter-text {
+    flex: 1;
+}
+
+.footer-newsletter-row .newsletter-form {
+    flex: 1;
 }
 
 .footer-content {
@@ -809,6 +838,15 @@ section {
 
     .client-logo {
         padding: var(--space-sm);
+    }
+
+    .footer-newsletter-row {
+        flex-direction: column;
+        gap: var(--space-md);
+    }
+
+    .footer-newsletter-row .newsletter-fields {
+        flex-direction: column;
     }
 
     .footer-content {
@@ -1243,6 +1281,243 @@ button:disabled {
     opacity: 0.6;
     cursor: not-allowed;
     transform: none !important;
+}
+
+/* ========================================
+   Writing Page
+   ======================================== */
+
+.writing-hero {
+    padding: 160px var(--space-lg) var(--space-lg);
+    background: var(--color-bg);
+}
+
+.writing-hero-description {
+    margin-top: var(--space-sm);
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+/* Newsletter */
+.writing-newsletter--footer-blend {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.writing-newsletter {
+    padding: var(--space-xl) var(--space-lg);
+    background: var(--color-dark);
+}
+
+.newsletter-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: var(--space-xl);
+}
+
+.newsletter-text {
+    flex: 1;
+}
+
+.newsletter-text h3 {
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    color: var(--color-cream);
+    margin-bottom: 0.4rem;
+}
+
+.newsletter-text p {
+    color: rgba(250, 248, 245, 0.6);
+    font-size: 0.95rem;
+}
+
+.newsletter-form {
+    flex: 1;
+}
+
+.newsletter-fields {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.newsletter-fields input[type="email"] {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    background: rgba(250, 248, 245, 0.08);
+    border: 1px solid rgba(250, 248, 245, 0.15);
+    border-radius: var(--radius-sm);
+    color: var(--color-cream);
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color var(--transition-fast);
+}
+
+.newsletter-fields input[type="email"]::placeholder {
+    color: rgba(250, 248, 245, 0.35);
+}
+
+.newsletter-fields input[type="email"]:focus {
+    border-color: var(--color-accent);
+}
+
+.newsletter-note {
+    margin-top: 0.6rem;
+    font-size: 0.78rem;
+    color: rgba(250, 248, 245, 0.35);
+}
+
+.newsletter-success {
+    margin-top: 0.6rem;
+    font-size: 0.95rem;
+    color: var(--color-accent);
+    font-style: italic;
+}
+
+/* Articles Grid */
+.writing-articles {
+    padding: var(--space-xl) var(--space-lg);
+    background: var(--color-bg);
+}
+
+.articles-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+}
+
+.article-card {
+    background: var(--color-cream);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.article-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(26, 26, 26, 0.09);
+}
+
+.article-cover {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+}
+
+.article-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.75);
+    transition: transform var(--transition-base);
+}
+
+.article-card:hover .article-cover img {
+    transform: scale(1.03);
+}
+
+.article-coming-badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background: var(--color-accent);
+    color: var(--color-cream);
+    padding: 0.25rem 0.7rem;
+    border-radius: 100px;
+}
+
+.article-body {
+    padding: 1.4rem 1.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.article-tag {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-accent);
+    margin-bottom: 0.5rem;
+}
+
+.article-title {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    color: var(--color-dark);
+    margin-bottom: 0.6rem;
+    line-height: 1.3;
+}
+
+.article-preview {
+    font-size: 0.88rem;
+    color: var(--color-text-muted);
+    line-height: 1.65;
+    flex: 1;
+}
+
+.article-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-border);
+}
+
+.article-date {
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+}
+
+.article-read-link {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    cursor: default;
+    opacity: 0.45;
+}
+
+.article-card--coming-soon {
+    opacity: 0.8;
+}
+
+@media (max-width: 900px) {
+    .articles-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .newsletter-inner {
+        flex-direction: column;
+        gap: var(--space-md);
+    }
+}
+
+@media (max-width: 600px) {
+    .writing-hero {
+        padding-top: 120px;
+    }
+    .articles-grid {
+        grid-template-columns: 1fr;
+    }
+    .newsletter-fields {
+        flex-direction: column;
+    }
 }
 
 /* ========================================
