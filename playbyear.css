@@ -862,8 +862,20 @@ section {
         display: none;
     }
 
+    .menu-bar {
+        padding: var(--space-sm);
+    }
+
+    .menu-logo {
+        font-size: 1.1rem;
+    }
+
     .menu-links {
-        gap: var(--space-sm);
+        gap: 0.65rem;
+    }
+
+    .menu-links a {
+        font-size: 0.78rem;
     }
 
     .btn {
@@ -1527,38 +1539,12 @@ button:disabled {
 .projects-hero {
     padding: 160px var(--space-lg) var(--space-lg);
     position: relative;
-    background-image: url('Assets/texture.webp');
-    background-size: cover;
-    background-position: center;
-}
-
-.projects-hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(252, 247, 238, 0.761);
-    pointer-events: none;
-    z-index: 1;
-}
-
-.projects-hero::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 30%;
-    width: 50%;
-    height: 100%;
-    background-image: url('Assets/splash.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: bottom right;
-    pointer-events: none;
-    z-index: 2;
+    background: var(--color-bg);
 }
 
 .projects-hero .section-header {
     position: relative;
-    z-index: 3;
+    z-index: 1;
 }
 
 .projects-list {
@@ -1906,6 +1892,254 @@ button:disabled {
 @media (max-width: 520px) {
     .checkout-panel {
         max-width: 100%;
+        padding: var(--space-md);
+    }
+}
+
+/* ========================================
+   Workshops Page
+   ======================================== */
+
+.workshops-hero,
+.workshop-section--quotes,
+.workshops-cta {
+    background: var(--color-bg);
+}
+
+.workshops-cta::before {
+    display: none;
+}
+
+.workshops-hero .hero-image img {
+    max-width: 400px;
+    animation: none;
+}
+
+.workshop-section {
+    background: var(--color-bg);
+}
+
+.workshop-section--alt {
+    background: var(--color-bg-alt);
+}
+
+.workshop-triptych {
+    padding: var(--space-md) var(--space-lg) var(--space-xl);
+    background: var(--color-bg);
+}
+
+.workshop-triptych-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.triptych-panel {
+    padding: var(--space-md) var(--space-md) var(--space-lg);
+    border-top: 2px solid var(--color-dark);
+}
+
+.triptych-panel + .triptych-panel {
+    border-left: 1px solid var(--color-border);
+    padding-left: var(--space-md);
+}
+
+.triptych-panel .section-eyebrow {
+    text-align: left;
+    margin-bottom: var(--space-sm);
+}
+
+.triptych-panel h3 {
+    font-size: clamp(1.15rem, 1.8vw, 1.5rem);
+    line-height: 1.35;
+    margin-bottom: var(--space-md);
+}
+
+.triptych-panel p {
+    font-size: 0.975rem;
+    line-height: 1.8;
+    color: var(--color-text-muted);
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .workshop-triptych-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .triptych-panel + .triptych-panel {
+        border-left: none;
+        border-top: 2px solid var(--color-dark);
+        padding-left: 0;
+        padding-top: var(--space-md);
+    }
+}
+
+.workshop-copy {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    text-align: center;
+    max-width: 820px;
+    margin: 0 auto;
+}
+
+.workshop-logistics-section {
+    padding: var(--space-xl) var(--space-lg);
+    background: var(--color-bg-alt);
+}
+
+.workshop-logistics-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.workshop-logistics-content h2 {
+    margin-bottom: var(--space-lg);
+}
+
+.workshop-logistics-carousel .photo-carousel {
+    max-width: 100%;
+}
+
+@media (max-width: 768px) {
+    .workshop-logistics-inner {
+        grid-template-columns: 1fr;
+    }
+}
+
+.workshop-approach .section-header {
+    position: relative;
+    z-index: 1;
+}
+
+.workshop-numbered-list {
+    display: grid;
+    gap: var(--space-xl);
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.workshop-numbered-item {
+    text-align: center;
+}
+
+.workshop-numbered-item p {
+    font-family: var(--font-display);
+    font-size: clamp(1.35rem, 2.6vw, 2rem);
+    line-height: 1.45;
+    color: var(--color-cream);
+    max-width: none;
+    margin: 0 auto;
+}
+
+.workshop-list {
+    display: grid;
+    gap: var(--space-sm);
+    list-style: none;
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.workshop-list li {
+    color: var(--color-text-muted);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    padding-bottom: var(--space-sm);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.workshop-list li:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.workshop-photo-section {
+    padding: var(--space-xl) var(--space-lg);
+    background: var(--color-bg-alt);
+}
+
+.photo-carousel {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.photo-slide {
+    display: none;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.photo-slide.active {
+    display: block;
+}
+
+.photo-carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: var(--space-md);
+}
+
+.photo-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid var(--color-dark);
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    transition: background var(--transition-fast);
+}
+
+.photo-dot.active {
+    background: var(--color-dark);
+}
+
+.workshop-quotes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.workshop-quote {
+    background: var(--color-cream);
+    border: 1px solid var(--color-border);
+    border-radius: 20px;
+    padding: var(--space-lg);
+}
+
+.workshop-quote blockquote {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-style: italic;
+    line-height: 1.45;
+    color: var(--color-dark);
+    margin-bottom: var(--space-md);
+}
+
+.workshop-quote figcaption {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .workshop-quotes {
+        grid-template-columns: 1fr;
+    }
+
+    .workshop-quote {
         padding: var(--space-md);
     }
 }
