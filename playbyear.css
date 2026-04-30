@@ -1711,6 +1711,278 @@ button:disabled {
 }
 
 /* ========================================
+   Hosting Page
+   ======================================== */
+
+.hosting-hero {
+    min-height: 82vh;
+    padding-top: 150px;
+    padding-bottom: var(--space-xl);
+}
+
+.hosting-hero h1 {
+    font-size: clamp(2.4rem, 5vw, 4.7rem);
+}
+
+.hosting-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+}
+
+.hosting-portrait {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hosting-portrait img {
+    width: min(100%, 430px);
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 28px;
+    border: 1px solid var(--color-border);
+    box-shadow: 0 35px 80px rgba(26, 26, 26, 0.12);
+}
+
+.hosting-image-note {
+    position: absolute;
+    left: 0;
+    bottom: -1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    max-width: 280px;
+    padding: 1rem 1.2rem;
+    background: var(--color-dark);
+    color: var(--color-cream);
+    border-radius: 12px;
+    box-shadow: 0 20px 50px rgba(26, 26, 26, 0.16);
+}
+
+.hosting-image-note span {
+    font-size: 0.82rem;
+    line-height: 1.35;
+}
+
+.hosting-section {
+    padding: var(--space-xl) var(--space-lg);
+    background: var(--color-bg);
+    scroll-margin-top: 90px;
+}
+
+.hosting-section--alt {
+    background: var(--color-bg-alt);
+}
+
+.hosting-section--dark {
+    background: var(--color-dark);
+    color: var(--color-cream);
+}
+
+.hosting-section--dark h2,
+.hosting-section--dark h3 {
+    color: var(--color-cream);
+}
+
+.hosting-section--dark p {
+    color: rgba(250, 248, 245, 0.68);
+}
+
+.hosting-section-header {
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: var(--space-lg);
+}
+
+.hosting-section-header h2 {
+    margin-bottom: var(--space-sm);
+}
+
+.hosting-section-header p {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hosting-card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+    max-width: 1120px;
+    margin: 0 auto;
+}
+
+.hosting-card,
+.hosting-format,
+.hosting-proof-item {
+    background: var(--color-cream);
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+}
+
+.hosting-card {
+    padding: var(--space-md);
+}
+
+.hosting-card h3,
+.hosting-format h3,
+.hosting-proof-item h3 {
+    font-size: 1.35rem;
+}
+
+.hosting-card p,
+.hosting-format p,
+.hosting-proof-item p {
+    font-size: 0.95rem;
+    line-height: 1.65;
+}
+
+.hosting-room-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.hosting-proof-layout {
+    display: grid;
+    grid-template-columns: minmax(280px, 0.8fr) 1.2fr;
+    gap: var(--space-lg);
+    align-items: start;
+    max-width: 1120px;
+    margin: 0 auto;
+}
+
+.hosting-proof-image {
+    position: sticky;
+    top: 110px;
+}
+
+.hosting-proof-image img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: 50% 70%;
+    border-radius: 20px;
+    display: block;
+}
+
+.hosting-proof-list {
+    display: grid;
+    gap: var(--space-sm);
+}
+
+.hosting-proof-item {
+    padding: 1.4rem 1.6rem;
+}
+
+.hosting-archive-link {
+    display: inline-flex;
+    width: fit-content;
+    margin-top: var(--space-sm);
+    color: var(--color-dark);
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-border);
+    transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.hosting-archive-link:hover {
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+.hosting-format-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-sm);
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+.hosting-format {
+    padding: 1.3rem 1.5rem;
+}
+
+.hosting-contact {
+    display: block;
+    scroll-margin-top: 90px;
+}
+
+.hosting-contact .consult-form {
+    text-align: left;
+}
+
+@media (max-width: 1024px) {
+    .hosting-card-grid,
+    .hosting-room-grid {
+        grid-template-columns: 1fr;
+        max-width: 620px;
+    }
+
+    .hosting-proof-layout {
+        grid-template-columns: 1fr;
+        max-width: 720px;
+    }
+
+    .hosting-proof-image {
+        position: static;
+    }
+
+    .hosting-proof-image img {
+        aspect-ratio: 16 / 10;
+    }
+
+    .hosting-format-list {
+        grid-template-columns: 1fr;
+        max-width: 680px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hosting-hero {
+        padding-top: 110px;
+        text-align: left;
+    }
+
+    .hosting-portrait {
+        order: -1;
+        flex-direction: column;
+    }
+
+    .hosting-portrait img {
+        width: min(100%, 320px);
+        border-radius: 20px;
+    }
+
+    .hosting-image-note {
+        position: static;
+        margin-top: var(--space-sm);
+        max-width: 320px;
+        width: min(100%, 320px);
+    }
+
+    .hosting-hero-actions {
+        flex-direction: column;
+    }
+
+    .hosting-section {
+        padding: var(--space-xl) var(--space-md);
+    }
+
+    .hosting-section-header {
+        text-align: left;
+    }
+
+    .hosting-section-header p {
+        margin-left: 0;
+    }
+}
+
+/* ========================================
    Booking page responsive
    ======================================== */
 

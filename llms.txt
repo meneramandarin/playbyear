@@ -8,7 +8,7 @@ Site: https://www.playbyear.xyz/
 
 - Hands-on vibe coding workshops for non-technical teams
 - Creative AI workshops and training sessions
-- Hackathon hosting, event MC work, and builder-focused programming
+- MC and event hosting, panel moderation, demo day hosting, hackathon hosting, and onstage facilitation
 - Interactive launch experiences, microsites, playful demos, and creative technology projects
 - One-on-one vibe coding setup sessions
 
@@ -16,12 +16,17 @@ Site: https://www.playbyear.xyz/
 
 - Home: https://www.playbyear.xyz/
 - Vibe Coding Workshops: https://www.playbyear.xyz/workshops
+- MC & Event Hosting: https://www.playbyear.xyz/hosting.html
 - Projects and selected work: https://www.playbyear.xyz/projects
 
 ## Workshop Summary
 
 Play By Ear runs two-hour hands-on vibe coding workshops where non-technical participants build and ship a live website with AI-assisted coding. Workshops are available for teams, events, hackathons, and selected cities in North America and Europe.
 
+## Hosting Summary
+
+Marlene Ronstedt is bookable through Play By Ear as an MC, event host, panel moderator, demo day host, hackathon host, and onstage facilitator for AI, tech, crypto, startup, conference, workshop, and creative technology events.
+
 ## Contact
 
-For workshop and project inquiries, use the contact form on the workshop page or book a discovery call from the site.
+For workshop, hosting, and project inquiries, use the contact forms on the workshop or hosting pages or book a discovery call from the site.
