@@ -138,8 +138,8 @@ module.exports = async (req, res) => {
                 zip,
                 country: country.toUpperCase(),
             },
-            success_url: 'https://playbyear.com/success.html',
-            cancel_url: 'https://playbyear.com/shop.html',
+            success_url: 'https://playbyear.xyz/success',
+            cancel_url: 'https://playbyear.xyz/shop',
         });
 
         res.status(200).json({ url: session.url });
