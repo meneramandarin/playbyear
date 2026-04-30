@@ -2103,6 +2103,12 @@ button:disabled {
     padding-bottom: 0;
 }
 
+.workshop-location-note {
+    margin-top: 1.25rem;
+    max-width: 620px;
+    opacity: 0.75;
+}
+
 .workshop-photo-section {
     padding: var(--space-xl) var(--space-lg);
     background: var(--color-bg-alt);
@@ -2230,6 +2236,52 @@ button:disabled {
 
 .one-on-one-action {
     flex-shrink: 0;
+}
+
+.workshop-faq {
+    padding: clamp(3rem, 6vw, 5rem) 2rem;
+    scroll-margin-top: 6rem;
+}
+
+.faq-list {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    gap: 0;
+}
+
+.faq-item {
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
+    padding: 1rem 0;
+}
+
+.faq-item:last-child {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.faq-item summary {
+    cursor: pointer;
+    font-weight: 600;
+    list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item summary::after {
+    content: "+";
+    float: right;
+    margin-left: 1rem;
+}
+
+.faq-item[open] summary::after {
+    content: "–";
+}
+
+.faq-item p {
+    margin-top: 0.75rem;
+    max-width: 720px;
 }
 
 .workshops-contact {
