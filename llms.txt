@@ -1,0 +1,27 @@
+# Play By Ear
+
+Play By Ear is a creative AI studio and workshop practice founded by Marlene Ronstedt.
+
+Site: https://www.playbyear.xyz/
+
+## What Play By Ear Does
+
+- Hands-on vibe coding workshops for non-technical teams
+- Creative AI workshops and training sessions
+- Hackathon hosting, event MC work, and builder-focused programming
+- Interactive launch experiences, microsites, playful demos, and creative technology projects
+- One-on-one vibe coding setup sessions
+
+## Key Pages
+
+- Home: https://www.playbyear.xyz/
+- Vibe Coding Workshops: https://www.playbyear.xyz/workshops
+- Projects and selected work: https://www.playbyear.xyz/projects
+
+## Workshop Summary
+
+Play By Ear runs two-hour hands-on vibe coding workshops where non-technical participants build and ship a live website with AI-assisted coding. Workshops are available for teams, events, hackathons, and selected cities in North America and Europe.
+
+## Contact
+
+For workshop and project inquiries, use the contact form on the workshop page or book a discovery call from the site.
