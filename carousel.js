@@ -5,6 +5,7 @@
 // Carousel functionality
 const carouselContent = document.querySelectorAll(".carousel-item");
 const carouselDots = document.querySelectorAll(".carousel-dot");
+const carouselDelay = 9000;
 let activeIndex = 0;
 let carouselInterval;
 
@@ -33,12 +34,12 @@ function goToSlide(index) {
 
 function resetCarouselInterval() {
     clearInterval(carouselInterval);
-    carouselInterval = setInterval(cycleCarousel, 7000);
+    carouselInterval = setInterval(cycleCarousel, carouselDelay);
 }
 
 // Initialize carousel
 updateCarousel();
-carouselInterval = setInterval(cycleCarousel, 7000);
+carouselInterval = setInterval(cycleCarousel, carouselDelay);
 
 // Dot click handlers
 carouselDots.forEach((dot, index) => {
@@ -146,6 +147,6 @@ if (carouselContainer) {
     });
 
     carouselContainer.addEventListener("mouseleave", () => {
-        carouselInterval = setInterval(cycleCarousel, 7000);
+        carouselInterval = setInterval(cycleCarousel, carouselDelay);
     });
 }
