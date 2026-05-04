@@ -16,7 +16,7 @@ Site: https://www.playbyear.xyz/
 
 - Home: https://www.playbyear.xyz/
 - Vibe Coding Workshops: https://www.playbyear.xyz/workshops
-- MC & Event Hosting: https://www.playbyear.xyz/hosting.html
+- MC & Event Hosting: https://www.playbyear.xyz/hosting
 - Projects and selected work: https://www.playbyear.xyz/projects
 
 ## Workshop Summary

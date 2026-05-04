@@ -1,6 +1,13 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/hosting.html",
+      "destination": "/hosting",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/playbyear-logo-dark.png",
