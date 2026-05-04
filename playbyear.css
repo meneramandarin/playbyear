@@ -282,7 +282,6 @@ p {
     max-width: 550px;
     height: auto;
     filter: drop-shadow(0 40px 80px rgba(26, 26, 26, 0.15));
-    animation: float 6s ease-in-out infinite;
 }
 
 @keyframes float {
@@ -626,6 +625,13 @@ section {
     margin-bottom: var(--space-lg);
 }
 
+.cta-actions {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-sm);
+}
+
 .cta-image {
     display: flex;
     justify-content: center;
@@ -796,6 +802,10 @@ section {
         align-items: center;
     }
 
+    .cta-actions {
+        align-items: center;
+    }
+
     .cta p {
         text-align: center;
     }
@@ -897,6 +907,10 @@ section {
     .btn {
         width: 100%;
         justify-content: center;
+    }
+
+    .cta-actions {
+        width: 100%;
     }
 
     .clients-grid {
@@ -1032,7 +1046,6 @@ section {
     width: auto;
     object-fit: contain;
     filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.4));
-    animation: float 6s ease-in-out infinite;
     position: relative;
     z-index: 1;
 }
@@ -1224,6 +1237,25 @@ section {
     max-width: 52ch;
 }
 
+.contact-page {
+    max-width: 820px;
+}
+
+.contact-page .contact-success {
+    display: block;
+    margin: 0 0 var(--space-md);
+    padding: 1rem 1.2rem;
+    border: 1px solid rgba(145, 128, 230, 0.28);
+    border-radius: 12px;
+    background: rgba(145, 128, 230, 0.08);
+    color: var(--color-dark);
+    font-size: 0.95rem;
+}
+
+.contact-page .contact-success[hidden] {
+    display: none;
+}
+
 /* Form */
 .consult-form {
     display: flex;
@@ -1315,6 +1347,12 @@ section {
     font-size: 0.85rem;
     color: var(--color-text-muted);
     max-width: 28ch;
+}
+
+.form-note a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
 }
 
 .form-error {

@@ -18,6 +18,7 @@ Site: https://www.playbyear.xyz/
 - Vibe Coding Workshops: https://www.playbyear.xyz/workshops
 - MC & Event Hosting: https://www.playbyear.xyz/hosting
 - Projects and selected work: https://www.playbyear.xyz/projects
+- Contact: https://www.playbyear.xyz/contact
 
 ## Workshop Summary
 
@@ -29,4 +30,4 @@ Marlene Ronstedt is bookable through Play By Ear as an MC, event host, panel mod
 
 ## Contact
 
-For workshop, hosting, and project inquiries, use the contact forms on the workshop or hosting pages or book a discovery call from the site.
+For workshop, hosting, and project inquiries, use https://www.playbyear.xyz/contact or book a discovery call from the site.
