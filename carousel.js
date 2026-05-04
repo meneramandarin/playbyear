@@ -3,48 +3,65 @@
 // ========================================
 
 // Carousel functionality
-const carouselContent = document.querySelectorAll(".carousel-item");
-const carouselDots = document.querySelectorAll(".carousel-dot");
 const carouselDelay = 9000;
-let activeIndex = 0;
-let carouselInterval;
 
-function updateCarousel() {
-    // Update items
-    carouselContent.forEach((item, index) => {
-        item.classList.toggle("active", index === activeIndex);
-    });
+function initializeCarousel(carousel) {
+    const carouselContent = carousel.querySelectorAll(".carousel-item");
+    const carouselNav = carousel.parentElement.querySelector(".carousel-nav");
+    const carouselDots = carouselNav ? carouselNav.querySelectorAll(".carousel-dot") : [];
 
-    // Update dots
-    carouselDots.forEach((dot, index) => {
-        dot.classList.toggle("active", index === activeIndex);
-    });
-}
+    if (!carouselContent.length) return;
 
-function cycleCarousel() {
-    activeIndex = (activeIndex + 1) % carouselContent.length;
-    updateCarousel();
-}
+    let activeIndex = Array.from(carouselContent).findIndex(item => item.classList.contains("active"));
+    if (activeIndex < 0) activeIndex = 0;
 
-function goToSlide(index) {
-    activeIndex = index;
+    let carouselInterval;
+
+    function updateCarousel() {
+        carouselContent.forEach((item, index) => {
+            item.classList.toggle("active", index === activeIndex);
+        });
+
+        carouselDots.forEach((dot, index) => {
+            dot.classList.toggle("active", index === activeIndex);
+        });
+    }
+
+    function cycleCarousel() {
+        activeIndex = (activeIndex + 1) % carouselContent.length;
+        updateCarousel();
+    }
+
+    function resetCarouselInterval() {
+        clearInterval(carouselInterval);
+        if (carouselContent.length > 1) {
+            carouselInterval = setInterval(cycleCarousel, carouselDelay);
+        }
+    }
+
+    function goToSlide(index) {
+        activeIndex = index;
+        updateCarousel();
+        resetCarouselInterval();
+    }
+
     updateCarousel();
     resetCarouselInterval();
+
+    carouselDots.forEach((dot, index) => {
+        dot.addEventListener("click", () => goToSlide(index));
+    });
+
+    carousel.addEventListener("mouseenter", () => {
+        clearInterval(carouselInterval);
+    });
+
+    carousel.addEventListener("mouseleave", () => {
+        resetCarouselInterval();
+    });
 }
 
-function resetCarouselInterval() {
-    clearInterval(carouselInterval);
-    carouselInterval = setInterval(cycleCarousel, carouselDelay);
-}
-
-// Initialize carousel
-updateCarousel();
-carouselInterval = setInterval(cycleCarousel, carouselDelay);
-
-// Dot click handlers
-carouselDots.forEach((dot, index) => {
-    dot.addEventListener("click", () => goToSlide(index));
-});
+document.querySelectorAll(".carousel").forEach(initializeCarousel);
 
 // ========================================
 // Menu bar scroll effect
@@ -136,17 +153,3 @@ document.querySelectorAll(".service-card").forEach(card => {
         }
     });
 });
-
-// ========================================
-// Pause carousel on hover
-// ========================================
-const carouselContainer = document.querySelector(".carousel");
-if (carouselContainer) {
-    carouselContainer.addEventListener("mouseenter", () => {
-        clearInterval(carouselInterval);
-    });
-
-    carouselContainer.addEventListener("mouseleave", () => {
-        carouselInterval = setInterval(cycleCarousel, carouselDelay);
-    });
-}
