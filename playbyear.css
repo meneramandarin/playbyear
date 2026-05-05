@@ -321,6 +321,10 @@ section {
     background: var(--color-bg);
 }
 
+#services {
+    padding-top: 4rem;
+}
+
 .services-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
