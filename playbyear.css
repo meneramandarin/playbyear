@@ -1903,27 +1903,30 @@ button:disabled {
     min-height: 360px;
 }
 
-.hosting-experience-carousel .carousel-item h3 {
-    color: var(--color-cream);
-    font-size: clamp(1.7rem, 3vw, 2.45rem);
-    margin-bottom: var(--space-sm);
+.hosting-experience-subline {
+    margin: var(--space-sm) auto 0;
+    color: rgba(250, 248, 245, 0.68);
+    font-size: 1rem;
+    max-width: 680px;
 }
 
-.hosting-experience-carousel .carousel-item p {
-    font-size: clamp(1.1rem, 2vw, 1.45rem);
+.hosting-experience-carousel .carousel-item blockquote {
+    color: var(--color-cream);
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    line-height: 1.4;
     max-width: 820px;
     margin: 0 auto;
 }
 
-.hosting-archive-link--light {
-    margin-top: var(--space-lg);
-    color: rgba(250, 248, 245, 0.74);
-    border-color: rgba(250, 248, 245, 0.28);
-}
-
-.hosting-archive-link--light:hover {
-    color: var(--color-cream);
-    border-color: var(--color-cream);
+.hosting-experience-carousel .hosting-quote-attribution {
+    font-family: var(--font-body);
+    font-style: normal;
+    margin: var(--space-md) auto 0;
+    color: rgba(250, 248, 245, 0.68);
+    font-size: 1rem;
+    max-width: 680px;
 }
 
 .hosting-contact {
