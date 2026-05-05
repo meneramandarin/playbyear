@@ -531,6 +531,17 @@ section {
     object-fit: contain;
 }
 
+.client-logo-wide {
+    padding-inline: var(--space-sm);
+}
+
+.client-logo img.client-logo-composio {
+    width: 140%;
+    max-width: 190px;
+    max-height: 96px;
+    transform: scale(1.18);
+}
+
 /* ========================================
    Team Section
    ======================================== */
