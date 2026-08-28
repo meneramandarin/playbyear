@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap');
+
+:root {
+    --cream: #FAF8F5;
+    --cream-deep: #F2EDE6;
+    --ink: #1A1A1A;
+    --muted: #5C5C5C;
+    --lavender: #9180E6;
+    --lavender-soft: #C7BEEA;
+    --line: rgba(26, 26, 26, 0.12);
+    --font-display: 'Instrument Serif', Georgia, serif;
+    --font-body: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 1200px;
+    height: 630px;
+    margin: 0;
+    overflow: hidden;
+    background: var(--cream);
+}
+
+body {
+    color: var(--ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: geometricPrecision;
+}
+
+.og-card {
+    position: relative;
+    width: 1200px;
+    height: 630px;
+    overflow: hidden;
+    padding: 62px 70px 54px;
+    background:
+        radial-gradient(circle at 84% 46%, rgba(145, 128, 230, 0.055), transparent 24%),
+        linear-gradient(135deg, var(--cream) 0%, #FBF9F6 60%, var(--cream-deep) 150%);
+}
+
+.og-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.025;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+.topline {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.eyebrow,
+.domain,
+.visual-label {
+    margin: 0;
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.eyebrow {
+    color: var(--lavender);
+}
+
+.domain {
+    color: rgba(26, 26, 26, 0.48);
+    letter-spacing: 0.08em;
+    text-transform: lowercase;
+}
+
+.copy {
+    position: relative;
+    z-index: 2;
+    width: 760px;
+    margin-top: 82px;
+}
+
+.copy h1 {
+    margin: 0;
+    color: var(--ink);
+    font-family: var(--font-display);
+    font-size: 82px;
+    font-weight: 400;
+    letter-spacing: -0.035em;
+    line-height: 0.94;
+}
+
+.copy h1 em {
+    color: var(--lavender);
+    font-weight: 400;
+}
+
+.description {
+    max-width: 660px;
+    margin: 29px 0 0;
+    color: var(--muted);
+    font-size: 21px;
+    font-weight: 400;
+    letter-spacing: -0.012em;
+    line-height: 1.45;
+}
+
+.services {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 32px;
+}
+
+.services span {
+    display: inline-flex;
+    align-items: center;
+    min-height: 31px;
+    padding: 0 13px;
+    color: rgba(26, 26, 26, 0.7);
+    border: 1px solid rgba(26, 26, 26, 0.12);
+    border-radius: 999px;
+    background: rgba(250, 248, 245, 0.54);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.075em;
+    text-transform: uppercase;
+}
+
+.soft-visual {
+    position: absolute;
+    z-index: 1;
+    top: 158px;
+    right: 76px;
+    width: 265px;
+    height: 300px;
+    opacity: 0.84;
+}
+
+.soft-visual::before {
+    content: '';
+    position: absolute;
+    top: 58px;
+    left: 48px;
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    background: rgba(145, 128, 230, 0.08);
+    filter: blur(22px);
+}
+
+.orbit {
+    position: absolute;
+    top: 68px;
+    left: 51px;
+    width: 166px;
+    height: 166px;
+    border: 1px solid rgba(145, 128, 230, 0.2);
+    border-radius: 50%;
+    filter: blur(0.25px);
+    transform: rotate(-16deg);
+}
+
+.orbit::before,
+.orbit::after {
+    content: '';
+    position: absolute;
+    border: 1px solid rgba(26, 26, 26, 0.1);
+    border-radius: 50%;
+}
+
+.orbit::before {
+    inset: 24px;
+}
+
+.orbit::after {
+    inset: 56px;
+    background: rgba(250, 248, 245, 0.78);
+    box-shadow: 0 0 22px rgba(145, 128, 230, 0.16);
+}
+
+.axis {
+    position: absolute;
+    top: 150px;
+    left: 8px;
+    width: 248px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(26, 26, 26, 0.16) 20%, rgba(145, 128, 230, 0.3) 72%, transparent);
+    filter: blur(0.35px);
+    transform: rotate(-23deg);
+    transform-origin: center;
+}
+
+.axis.secondary {
+    top: 160px;
+    left: 44px;
+    width: 190px;
+    opacity: 0.55;
+    transform: rotate(34deg);
+}
+
+.node {
+    position: absolute;
+    width: 11px;
+    height: 11px;
+    border: 1px solid rgba(145, 128, 230, 0.38);
+    border-radius: 50%;
+    background: var(--cream);
+    box-shadow: 0 0 0 6px rgba(145, 128, 230, 0.045), 0 0 18px rgba(145, 128, 230, 0.16);
+    filter: blur(0.2px);
+}
+
+.node-a { top: 196px; left: 44px; }
+.node-b { top: 115px; left: 124px; width: 15px; height: 15px; }
+.node-c { top: 83px; left: 210px; }
+.node-d { top: 224px; left: 185px; width: 8px; height: 8px; }
+
+.soft-visual .visual-label {
+    position: absolute;
+    right: 12px;
+    bottom: 3px;
+    color: rgba(26, 26, 26, 0.35);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+}
+
+.gtm-card .copy {
+    width: 780px;
+    margin-top: 76px;
+}
+
+.gtm-card .copy h1 {
+    font-size: 78px;
+}
+
+.gtm-card .description {
+    max-width: 680px;
+}
+
+.gtm-card .soft-visual {
+    top: 168px;
+    right: 65px;
+    width: 275px;
+    height: 290px;
+}
+
+.gtm-card .orbit {
+    top: 55px;
+    left: 72px;
+    width: 138px;
+    height: 138px;
+    border-radius: 34% 66% 62% 38% / 48% 42% 58% 52%;
+    transform: rotate(18deg);
+}
+
+.gtm-card .orbit::before {
+    inset: 20px;
+    border-radius: inherit;
+}
+
+.gtm-card .orbit::after {
+    inset: 47px;
+}
+
+.gtm-card .axis {
+    top: 167px;
+    left: 18px;
+    width: 244px;
+    transform: rotate(-31deg);
+}
+
+.gtm-card .axis.secondary {
+    top: 150px;
+    left: 57px;
+    width: 180px;
+    transform: rotate(49deg);
+}
+
+.gtm-card .node-a { top: 207px; left: 38px; }
+.gtm-card .node-b { top: 148px; left: 112px; }
+.gtm-card .node-c { top: 89px; left: 203px; }
+.gtm-card .node-d { top: 214px; left: 211px; }
+
+.corner-rule {
+    position: absolute;
+    right: 70px;
+    bottom: 53px;
+    width: 90px;
+    height: 1px;
+    background: rgba(145, 128, 230, 0.4);
+}
