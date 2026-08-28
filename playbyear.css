@@ -839,11 +839,26 @@ section {
     }
 
     .menu-bar {
-        padding: var(--space-sm) var(--space-md);
+        padding: var(--space-sm);
     }
 
     .menu-logo {
-        font-size: 1.25rem;
+        flex-shrink: 0;
+        font-size: 1.05rem;
+        white-space: nowrap;
+    }
+
+    .menu-links {
+        gap: 0.65rem;
+    }
+
+    .menu-links a {
+        font-size: 0.75rem;
+        white-space: nowrap;
+    }
+
+    .nav-cta {
+        padding: 0.5rem 0.8rem;
     }
 
     section {
@@ -895,6 +910,12 @@ section {
         gap: var(--space-md);
         text-align: center;
     }
+
+    .footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        row-gap: var(--space-sm);
+    }
 }
 
 /* Small Mobile */
@@ -904,19 +925,20 @@ section {
     }
 
     .menu-bar {
-        padding: var(--space-sm);
+        padding: 0.75rem 0.6rem;
     }
 
     .menu-logo {
-        font-size: 1.1rem;
+        flex-shrink: 0;
+        font-size: 1rem;
     }
 
     .menu-links {
-        gap: 0.65rem;
+        gap: 0.4rem;
     }
 
     .menu-links a {
-        font-size: 0.78rem;
+        font-size: 0.68rem;
     }
 
     .btn {
@@ -2770,4 +2792,373 @@ button:disabled {
     font-size: 1.05rem;
     color: var(--color-text-muted);
     max-width: 40ch;
+}
+
+/* ========================================
+   GTM Page
+   ======================================== */
+
+.gtm-hero {
+    min-height: 88vh;
+    padding-top: 150px;
+    padding-bottom: var(--space-xl);
+}
+
+.gtm-hero h1 {
+    font-size: clamp(2.6rem, 5.4vw, 5rem);
+}
+
+.gtm-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+}
+
+.gtm-hero-image img {
+    max-width: 430px;
+}
+
+.gtm-offer {
+    background: var(--color-bg-alt);
+}
+
+.gtm-section-header {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gtm-section-header h2 {
+    margin-bottom: var(--space-sm);
+}
+
+.gtm-section-header p {
+    margin: 0 auto;
+    font-size: 1.05rem;
+}
+
+.gtm-offer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+    max-width: 1120px;
+    margin: 0 auto;
+}
+
+.gtm-offer-card {
+    min-height: 300px;
+    padding: var(--space-md);
+    background: var(--color-cream);
+    border: 1px solid var(--color-border);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.gtm-card-number {
+    display: block;
+    margin-bottom: auto;
+    color: var(--color-accent);
+    font-family: var(--font-display);
+    font-size: 2.3rem;
+}
+
+.gtm-offer-card h3 {
+    font-size: 1.7rem;
+}
+
+.gtm-offer-card p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.gtm-work {
+    background: var(--color-dark);
+    color: var(--color-cream);
+}
+
+.gtm-work-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: var(--space-xl);
+    align-items: end;
+    max-width: 1120px;
+    margin: 0 auto var(--space-xl);
+}
+
+.gtm-work-intro h2 {
+    color: var(--color-cream);
+    margin-bottom: 0;
+}
+
+.gtm-work-intro p {
+    color: rgba(250, 248, 245, 0.68);
+    font-size: 1.05rem;
+    max-width: 58ch;
+}
+
+.gtm-case-metrics {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: var(--space-lg);
+    align-items: center;
+    max-width: 1120px;
+    margin: 0 auto var(--space-xl);
+    padding: var(--space-md) 0;
+    border-top: 1px solid rgba(250, 248, 245, 0.15);
+    border-bottom: 1px solid rgba(250, 248, 245, 0.15);
+}
+
+.gtm-case-metrics div {
+    display: flex;
+    flex-direction: column;
+}
+
+.gtm-case-metrics strong {
+    color: var(--color-cream);
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 5vw, 4.2rem);
+    font-weight: 400;
+    line-height: 1;
+}
+
+.gtm-case-metrics span {
+    color: rgba(250, 248, 245, 0.62);
+    font-size: 0.85rem;
+}
+
+.gtm-case-metrics a {
+    color: var(--color-cream);
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(250, 248, 245, 0.25);
+}
+
+.gtm-case-metrics a:hover {
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+.gtm-case-scope {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+    max-width: 1120px;
+    margin: 0 auto var(--space-xl);
+}
+
+.gtm-case-scope article {
+    padding: var(--space-md);
+    border: 1px solid rgba(250, 248, 245, 0.15);
+    border-radius: 18px;
+}
+
+.gtm-case-scope article > span {
+    display: block;
+    margin-bottom: var(--space-lg);
+    color: var(--color-accent);
+    font-family: var(--font-display);
+    font-size: 2rem;
+}
+
+.gtm-case-scope h3 {
+    color: var(--color-cream);
+    font-size: 1.6rem;
+}
+
+.gtm-case-scope p {
+    color: rgba(250, 248, 245, 0.65);
+    font-size: 0.95rem;
+}
+
+.gtm-case-proof-heading {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+    align-items: end;
+    max-width: 1120px;
+    margin: 0 auto var(--space-lg);
+}
+
+.gtm-case-proof-heading h3 {
+    color: var(--color-cream);
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    margin: 0;
+}
+
+.gtm-case-proof-heading p {
+    color: rgba(250, 248, 245, 0.65);
+}
+
+.gtm-case-proof-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+    align-items: start;
+    max-width: 1120px;
+    margin: 0 auto;
+}
+
+.gtm-case-post {
+    display: block;
+    color: var(--color-cream);
+    text-decoration: none;
+}
+
+.gtm-case-post img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 598 / 596;
+    object-fit: cover;
+    object-position: top;
+    border: 1px solid rgba(250, 248, 245, 0.15);
+    border-radius: 18px;
+    transition: transform var(--transition-smooth), border-color var(--transition-fast);
+}
+
+.gtm-case-post:hover img {
+    transform: translateY(-6px);
+    border-color: var(--color-accent);
+}
+
+.gtm-case-post > span {
+    display: inline-flex;
+    gap: 0.35rem;
+    margin-top: var(--space-sm);
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.gtm-faq {
+    background: var(--color-bg-alt);
+}
+
+.gtm-faq-list {
+    max-width: 860px;
+    margin: var(--space-lg) auto 0;
+    border-top: 1px solid var(--color-border);
+}
+
+.gtm-faq-list details {
+    border-bottom: 1px solid var(--color-border);
+}
+
+.gtm-faq-list summary {
+    position: relative;
+    padding: 1.4rem 3rem 1.4rem 0;
+    color: var(--color-dark);
+    font-family: var(--font-display);
+    font-size: clamp(1.35rem, 2.4vw, 1.8rem);
+    line-height: 1.25;
+    cursor: pointer;
+    list-style: none;
+}
+
+.gtm-faq-list summary::-webkit-details-marker {
+    display: none;
+}
+
+.gtm-faq-list summary::after {
+    content: '+';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    color: var(--color-accent);
+    font-family: var(--font-body);
+    font-size: 1.5rem;
+    transform: translateY(-50%);
+}
+
+.gtm-faq-list details[open] summary::after {
+    content: '−';
+}
+
+.gtm-faq-list details p {
+    max-width: 68ch;
+    padding: 0 0 1.5rem;
+}
+
+.gtm-cta {
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-xl);
+}
+
+@media (max-width: 1024px) {
+    .gtm-offer-grid {
+        grid-template-columns: 1fr;
+        max-width: 620px;
+    }
+
+    .gtm-offer-card {
+        min-height: 250px;
+    }
+
+    .gtm-work-intro {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+        max-width: 620px;
+    }
+
+    .gtm-case-metrics,
+    .gtm-case-scope,
+    .gtm-case-proof-heading,
+    .gtm-case-proof-grid {
+        max-width: 620px;
+    }
+}
+
+@media (max-width: 768px) {
+    .gtm-hero {
+        padding-top: 110px;
+        text-align: left;
+    }
+
+    .gtm-hero-image {
+        order: -1;
+    }
+
+    .gtm-hero-image img {
+        max-width: 270px;
+    }
+
+    .gtm-hero-actions {
+        flex-direction: column;
+    }
+
+    .gtm-offer-card {
+        min-height: auto;
+    }
+
+    .gtm-card-number {
+        margin-bottom: var(--space-lg);
+    }
+
+    .gtm-work-intro {
+        margin-bottom: var(--space-lg);
+    }
+
+    .gtm-case-metrics,
+    .gtm-case-scope,
+    .gtm-case-proof-heading,
+    .gtm-case-proof-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gtm-case-metrics {
+        gap: var(--space-md);
+    }
+
+    .gtm-case-metrics a {
+        width: fit-content;
+    }
+
+    .gtm-case-scope article > span {
+        margin-bottom: var(--space-md);
+    }
+
+    .gtm-case-proof-heading {
+        gap: var(--space-sm);
+    }
 }

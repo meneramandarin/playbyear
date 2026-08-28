@@ -1,33 +1,37 @@
 # Play By Ear
 
-Play By Ear is a creative AI studio and workshop practice founded by Marlene Ronstedt.
+Play By Ear is a fractional GTM agency and event-hosting studio for emerging technology, founded by Marlene Ronstedt.
 
 Site: https://www.playbyear.xyz/
 
 ## What Play By Ear Does
 
-- Hands-on vibe coding workshops for non-technical teams
-- Creative AI workshops and training sessions
-- MC and event hosting, panel moderation, demo day hosting, hackathon hosting, and onstage facilitation
-- Interactive launch experiences, microsites, playful demos, and creative technology projects
-- One-on-one vibe coding setup sessions
+- Fractional GTM leadership for blockchain, fintech, AI, and developer-tool companies
+- Hands-on GTM agency support across positioning, narrative, launches, partner coordination, and ecosystem campaigns
+- MCing, event hosting, panel moderation, demo day hosting, hackathon hosting, and onstage facilitation
+- Occasional vibe coding workshops for non-technical teams and events
 
 ## Key Pages
 
 - Home: https://www.playbyear.xyz/
-- Vibe Coding Workshops: https://www.playbyear.xyz/workshops
+- Fractional GTM & GTM Agency: https://www.playbyear.xyz/gtm
 - MC & Event Hosting: https://www.playbyear.xyz/hosting
 - Projects and selected work: https://www.playbyear.xyz/projects
+- Vibe Coding Workshops: https://www.playbyear.xyz/workshops
 - Contact: https://www.playbyear.xyz/contact
 
-## Workshop Summary
+## GTM Summary
 
-Play By Ear runs two-hour hands-on vibe coding workshops where non-technical participants build and ship a live website with AI-assisted coding. Workshops are available for teams, events, hackathons, and selected cities in North America and Europe.
+Play By Ear supports blockchain, fintech, AI, and developer-tool companies as a fractional GTM partner and hands-on agency. Engagements cover positioning, narrative, launch strategy, ecosystem campaigns, partner coordination, campaign assets, and execution.
 
 ## Hosting Summary
 
-Marlene Ronstedt is bookable through Play By Ear as an MC, event host, panel moderator, demo day host, hackathon host, and onstage facilitator for AI, tech, crypto, startup, conference, workshop, and creative technology events.
+Marlene Ronstedt is bookable through Play By Ear as an MC, event host, panel moderator, demo day host, hackathon host, and onstage facilitator for AI, tech, crypto, startup, conference, and developer events worldwide.
+
+## Workshop Summary
+
+Play By Ear occasionally runs two-hour hands-on vibe coding workshops where non-technical participants build and publish a live website using AI-assisted coding tools.
 
 ## Contact
 
-For workshop, hosting, and project inquiries, use https://www.playbyear.xyz/contact or book a discovery call from the site.
+For fractional GTM, GTM agency, event hosting, and project inquiries, use https://www.playbyear.xyz/contact or book a discovery call from the site.

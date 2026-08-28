@@ -1,16 +1,10 @@
+# Play By Ear is open to search and AI discovery crawlers.
 User-agent: *
-Allow: /
-
 User-agent: OAI-SearchBot
-Allow: /
-
 User-agent: ChatGPT-User
-Allow: /
-
 User-agent: GPTBot
-Allow: /
-
 User-agent: PerplexityBot
 Allow: /
+Disallow: /api/
 
 Sitemap: https://www.playbyear.xyz/sitemap.xml
