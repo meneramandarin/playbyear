@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    const MEASUREMENT_ID = 'G-12KLVHJWJ1';
+    const MEASUREMENT_ID = 'G-X2GNJB46F3';
     const CONSENT_KEY = 'pbe-analytics-consent';
     const CONSENT_GRANTED = 'granted';
     const CONSENT_DENIED = 'denied';
