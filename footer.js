@@ -28,6 +28,7 @@ const footerMarkup = `
                 <a href="/contact">Contact</a>
                 <a href="https://www.linkedin.com/company/playbyear/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                 <a href="/privacy-policy">Privacy</a>
+                <button type="button" class="footer-link-button" data-analytics-settings>Privacy Choices</button>
             </nav>
         </div>
         <p class="footer-copyright">&copy; 2026 Play By Ear. All rights reserved.</p>
@@ -61,6 +62,9 @@ document.querySelectorAll('.newsletter-form').forEach((form) => {
             if (success) {
                 success.textContent = 'Thanks for subscribing.';
                 success.style.display = 'block';
+            }
+            if (window.pbeTrack) {
+                window.pbeTrack('generate_lead', { form_name: 'newsletter_signup' });
             }
         } catch (error) {
             if (success) {

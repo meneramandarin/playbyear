@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Satoshi:wght@400;500;700&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="playbyear.css">
+    <script src="analytics.js" defer></script>
 
     <title>Book a 1:1 Vibe Coding Session | Play By Ear</title>
     <meta name="description" content="Book a two-hour one-on-one vibe coding session with Marlene Ronstedt covering VS Code, AI coding agents, GitHub, and Vercel.">
@@ -124,6 +125,14 @@
                 });
 
                 if (response.ok) {
+                    if (window.pbeTrack) {
+                        window.pbeTrack('generate_lead', { form_name: 'consultation_request' });
+                        window.pbeTrack('begin_checkout', {
+                            currency: 'USD',
+                            value: 200,
+                            items: [{ item_id: 'vibe_coding_session', item_name: '1:1 Vibe Coding Session' }]
+                        });
+                    }
                     window.location.href = 'https://buy.stripe.com/aFafZh2FY6e5fKOgSff3a03';
                 } else {
                     throw new Error('Formspree error');
