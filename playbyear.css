@@ -598,6 +598,7 @@ section {
 
 .client-logo {
     display: flex;
+    text-decoration: none;
     justify-content: center;
     align-items: center;
     padding: var(--space-md);
@@ -620,15 +621,17 @@ section {
     object-fit: contain;
 }
 
-.client-logo-wide {
-    padding-inline: var(--space-sm);
+.client-logo-mpower {
+    filter: brightness(0);
 }
 
-.client-logo img.client-logo-composio {
-    width: 140%;
-    max-width: 190px;
-    max-height: 96px;
-    transform: scale(1.18);
+.client-wordmark-longevity {
+    color: var(--color-text);
+    font-family: Arial, sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.05;
+    letter-spacing: -0.8px;
 }
 
 /* ========================================
