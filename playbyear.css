@@ -629,11 +629,6 @@ section {
     font-display: swap;
 }
 
-.client-logo-color {
-    opacity: 1;
-    filter: none;
-}
-
 .client-mpower {
     position: relative;
     display: block;
