@@ -366,6 +366,10 @@ p {
     align-items: center;
 }
 
+.hero-image picture {
+    display: contents;
+}
+
 .hero-image img {
     width: 100%;
     max-width: 550px;
@@ -443,7 +447,8 @@ section {
 
 .service-icon img {
     width: 180px;
-    height: auto;
+    height: 180px;
+    object-fit: cover;
     transition: transform var(--transition-smooth);
 }
 
