@@ -1,5 +1,3 @@
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
-
 const VARIANT_IDS = {
     hoodie: {
         'S':   5220373455,
@@ -23,6 +21,11 @@ async function getRawBody(req) {
 
 module.exports = async (req, res) => {
     if (req.method !== 'POST') return res.status(405).end();
+
+    if (!process.env.STRIPE_SECRET_KEY || !process.env.STRIPE_WEBHOOK_SECRET) {
+        return res.status(503).json({ error: 'Webhook is temporarily unavailable' });
+    }
+    const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
     // Must use raw body for Stripe signature verification
     const rawBody = await getRawBody(req);

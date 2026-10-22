@@ -1,5 +1,3 @@
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
-
 const VARIANT_IDS = {
     hoodie: {
         'S':   5220373455,
@@ -30,6 +28,11 @@ module.exports = async (req, res) => {
 
     if (req.method === 'OPTIONS') return res.status(200).end();
     if (req.method !== 'POST') return res.status(405).end();
+
+    if (!process.env.STRIPE_SECRET_KEY) {
+        return res.status(503).json({ error: 'Payments are temporarily unavailable' });
+    }
+    const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
     // Parse body — handle both pre-parsed (object) and raw string
     let body;
