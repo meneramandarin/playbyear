@@ -3,6 +3,16 @@
   "cleanUrls": true,
   "redirects": [
     {
+      "source": "/shop",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/shop.html",
+      "destination": "/",
+      "permanent": false
+    },
+    {
       "source": "/hosting.html",
       "destination": "/hosting",
       "permanent": true
