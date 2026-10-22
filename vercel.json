@@ -3,6 +3,11 @@
   "cleanUrls": true,
   "redirects": [
     {
+      "source": "/shop/",
+      "destination": "/",
+      "permanent": false
+    },
+    {
       "source": "/shop/:path*",
       "destination": "/",
       "permanent": false
