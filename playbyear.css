@@ -2004,9 +2004,8 @@ button:disabled {
 }
 
 .hosting-portrait img {
-    width: min(100%, 430px);
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
+    width: min(100%, 640px);
+    height: auto;
     border-radius: 28px;
     border: 1px solid var(--color-border);
     box-shadow: 0 35px 80px rgba(26, 26, 26, 0.12);
@@ -2033,6 +2032,7 @@ button:disabled {
 }
 
 .hosting-section {
+    --formats-width: 900px;
     padding: var(--space-xl) var(--space-lg);
     background: var(--color-bg);
     scroll-margin-top: 90px;
@@ -2076,7 +2076,7 @@ button:disabled {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: var(--space-md);
-    max-width: 900px;
+    max-width: var(--formats-width);
     margin: 0 auto;
 }
 
@@ -2105,6 +2105,41 @@ button:disabled {
     gap: var(--space-lg);
     max-width: 1080px;
     margin: 0 auto;
+}
+
+.hosting-gallery {
+    display: grid;
+    /* Two 4:3 landscapes and a 7:10 stage crop share one height. */
+    grid-template-columns: 4fr 4fr 2.1fr;
+    gap: clamp(0.4rem, 1.2vw, 0.85rem);
+    max-width: var(--formats-width);
+    margin: var(--space-md) auto 0;
+    scroll-margin-top: 110px;
+}
+
+.hosting-gallery img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.hosting-gallery .hosting-conference-photo {
+    aspect-ratio: 7 / 10;
+    object-fit: cover;
+    object-position: center bottom;
+}
+
+.hosting-group {
+    padding: var(--space-xl) var(--space-lg) 0;
+}
+
+.hosting-group-photo {
+    display: block;
+    width: min(100%, 1100px);
+    height: auto;
+    margin: 0 auto;
+    border-radius: 16px;
 }
 
 .hosting-archive-link {
@@ -2167,7 +2202,14 @@ button:disabled {
 }
 
 @media (max-width: 1024px) {
-    .hosting-card-grid,
+    .hosting-section {
+        --formats-width: 620px;
+    }
+
+    .hosting-card-grid {
+        grid-template-columns: 1fr;
+    }
+
     .hosting-room-grid {
         grid-template-columns: 1fr;
         max-width: 620px;
@@ -2187,7 +2229,7 @@ button:disabled {
     }
 
     .hosting-portrait img {
-        width: min(100%, 320px);
+        width: 100%;
         border-radius: 20px;
     }
 
@@ -2213,6 +2255,7 @@ button:disabled {
     .hosting-section-header p {
         margin-left: 0;
     }
+
 }
 
 /* ========================================
@@ -2694,6 +2737,10 @@ button:disabled {
     border: 1px solid var(--color-border);
     border-radius: 20px;
     padding: var(--space-lg);
+}
+
+.workshop-quote-featured {
+    grid-column: 1 / -1;
 }
 
 .workshop-quote blockquote {

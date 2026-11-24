@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Satoshi:wght@400;500;700&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="playbyear.css?v=20260828-image-fix">
+    <link rel="stylesheet" href="playbyear.css?v=20261124-gallery-crop">
     <script src="analytics.js" defer></script>
 
     <title>Tech Event Host, MC &amp; Moderator | Play By Ear</title>
@@ -86,9 +86,9 @@
           },
           "primaryImageOfPage": {
             "@type": "ImageObject",
-            "url": "https://www.playbyear.xyz/Assets/event-hosting-play-by-ear-og.png",
-            "width": 1200,
-            "height": 630
+            "url": "https://www.playbyear.xyz/Assets/host-at-builder-loft.webp",
+            "width": 1086,
+            "height": 724
           },
           "about": {
             "@id": "https://www.playbyear.xyz/hosting#service"
@@ -203,8 +203,7 @@
             </div>
         </div>
         <div class="hosting-portrait fade-in-delay">
-            <!-- TODO: Replace with a strong stage/MC photo of Marlene when available. -->
-            <img src="Assets/marlene.png" width="960" height="960" fetchpriority="high" alt="Portrait of Marlene Ronstedt, tech event host, MC and moderator">
+            <img src="Assets/host-at-builder-loft.webp" width="1086" height="724" fetchpriority="high" alt="Marlene Ronstedt in red, holding a microphone at the AWS Builder Loft">
             <div class="hosting-image-note">
                 <span>Play By Ear is the studio.</span>
                 <span>Marlene is the person on the mic.</span>
@@ -213,10 +212,10 @@
     </header>
 
     <main>
-        <section class="hosting-section">
+        <section class="hosting-section" id="formats" aria-labelledby="formats-heading">
             <div class="section-header hosting-section-header">
                 <p class="section-eyebrow">Formats</p>
-                <h2>From Hackathons to Conference Stages</h2>
+                <h2 id="formats-heading">From Hackathons to Conference Stages</h2>
                 <p>Across formats, we keep the program clear, on schedule, and useful to the audience.</p>
             </div>
             <div class="hosting-card-grid">
@@ -236,6 +235,11 @@
                     <h3>Startup &amp; Community Events</h3>
                     <p>We work with VC firms, founder communities, and product teams to host smaller gatherings with the right tone for the audience.</p>
                 </article>
+            </div>
+            <div class="hosting-gallery" id="formats-gallery">
+                <img src="Assets/hackathon-teams.webp" width="1024" height="768" loading="lazy" alt="Hackathon teams working together around tables of laptops">
+                <img src="Assets/builder-loft-podium.webp" width="1024" height="768" loading="lazy" alt="Marlene addressing the room from the AWS Builder Loft podium">
+                <img class="hosting-conference-photo" src="Assets/ai-conference-stage.webp" width="665" height="1182" loading="lazy" alt="Marlene speaking onstage at The AI Conference in San Francisco">
             </div>
         </section>
 
@@ -267,6 +271,10 @@
                 </div>
             </div>
         </section>
+
+        <div class="hosting-group">
+            <img class="hosting-group-photo" src="Assets/builder-loft-group.webp" width="1508" height="520" loading="lazy" alt="Marlene and event participants gathered for a group photo at the AWS Builder Loft">
+        </div>
 
         <section id="contact" class="cta workshops-cta workshops-contact hosting-contact">
             <div class="workshops-contact-inner fade-up">
